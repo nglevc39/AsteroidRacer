@@ -36,8 +36,8 @@ class AsteroidsWindow(pyglet.window.Window):
         self.stars = []
 
         pyglet.clock.schedule_interval(self.game_tick, 0.005)
-        self.background_music.play()
-        pyglet.clock.schedule_interval(lambda x: self.background_music.play(), 13.8)
+        
+       
 
     def game_tick(self, dt):
         self.update_stars()
@@ -76,7 +76,7 @@ class AsteroidsWindow(pyglet.window.Window):
             if self.sprites_collide(asteroid, self.ship):
                 self.asteroids.remove(asteroid)
                 self.score = 0
-                self.explosion_sound.play()
+               
 
     def update_ship(self):
         if self.keys[pyglet.window.key.LEFT] and not self.ship.x < 0:
